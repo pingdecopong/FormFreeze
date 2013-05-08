@@ -1,0 +1,5 @@
+pingdecopong_sample:
+    resource: "@pingdecopongSampleBundle/Controller/"
+    type:     annotation
+    prefix:   /sample
+

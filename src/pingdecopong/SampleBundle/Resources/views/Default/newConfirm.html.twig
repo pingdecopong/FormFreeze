@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+{% form_theme form 'pingdecopongFormFreezeBundle:Form:form_layout.html.twig' %}
+
+{% block title %}ユーザ情報　新規作成確認{% endblock %}
+
+{% block body %}
+    <h1>ユーザ情報　新規作成確認</h1>
+    <form action="{{ path('systemuser_new_create') }}" method="post" {{ form_enctype(form) }} novalidate name="systemuser_new_confirm" >
+
+        {{ form_widget(form) }}
+
+        <p>
+            <button onclick="document.systemuser_new_confirm.action = '{{ path('systemuser_new') }}'">戻る</button>
+            <button type="submit">登録</button>
+        </p>
+    </form>
+{% endblock %}

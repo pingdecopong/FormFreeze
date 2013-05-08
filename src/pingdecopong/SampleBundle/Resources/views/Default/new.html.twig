@@ -1,0 +1,32 @@
+{% extends "::base.html.twig" %}
+{% form_theme form 'pingdecopongFormFreezeBundle:Form:form_layout.html.twig' %}
+
+{% block title %}ユーザ情報　新規作成{% endblock %}
+
+{% block body %}
+    <h1>ユーザ情報　新規作成</h1>
+    <form action="{{ path('systemuser_new_confirm') }}" method="post" {{ form_enctype(form) }} novalidate name="systemuser_new">
+
+        {{ form_widget(form) }}
+
+        <p>
+            <button type="submit">確認</button>
+        </p>
+
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        //<![CDATA[
+        function changeCompany(){
+//            document.systemuser_new.{{ form.department.vars.id }}.value = "";
+//            postBack();
+        }
+        function postBack(){
+//            document.systemuser_new.action = "{{ path('systemuser_new') }}";
+//            document.systemuser_new.submit();
+        }
+        //]]>
+    </script>
+{% endblock %}
