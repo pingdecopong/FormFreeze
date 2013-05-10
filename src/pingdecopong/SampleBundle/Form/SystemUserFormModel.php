@@ -66,6 +66,21 @@ class SystemUserFormModel {
     private $createDatetime;
 
     /**
+     * @var string イメージファイルパス
+     */
+    private $imgFile;
+
+    public function setImgFile($imgFile)
+    {
+        $this->imgFile = $imgFile;
+    }
+
+    public function getImgFile()
+    {
+        return $this->imgFile;
+    }
+
+    /**
      * @param  $createDatetime
      */
     public function setCreateDatetime($createDatetime)

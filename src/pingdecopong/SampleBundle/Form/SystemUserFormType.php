@@ -63,6 +63,9 @@ class SystemUserFormType extends AbstractType
                 'label' => '登録日時',
                 'required' => true,
             ))
+            ->add('imgFile', 'file', array(
+                'label' => '画像',
+            ))
         ;
     }
 

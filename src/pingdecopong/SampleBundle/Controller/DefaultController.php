@@ -62,6 +62,8 @@ class DefaultController extends Controller
 
         if($form->isValid()){
 
+//            $a = $form['imgFile']->getData();
+
             $builder->setAttribute('freeze', true);
             $form = $builder->getForm();
 
