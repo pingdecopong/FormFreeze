@@ -115,4 +115,28 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * 新規作成　入力フォーム2（バリデーション無しタイプ）
+     *
+     * @Route("/new2", name="systemuser_new2")
+     * @Template()
+     */
+    public function new2Action(Request $request)
+    {
+        $formModel = new SystemUserFormModel();
+        $formType = new SystemUserFormType();
+        $builder = $this->get('form.factory')->createBuilder($formType, $formModel);
+        $builder->setAttribute('novalidation', true);
+        $form = $builder->getForm();
+
+        if($request->isMethod('POST')){
+            $form->bind($request);
+        }
+
+        return array(
+            'entity' => $formModel,
+            'form' => $form->createView(),
+        );
+    }
 }
